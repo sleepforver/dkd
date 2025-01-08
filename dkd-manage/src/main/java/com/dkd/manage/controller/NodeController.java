@@ -9,6 +9,8 @@ import com.dkd.common.utils.poi.ExcelUtil;
 import com.dkd.manage.domain.Node;
 import com.dkd.manage.domain.vo.NodeVo;
 import com.dkd.manage.service.INodeService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +21,10 @@ import java.util.List;
 /**
  * 点位管理Controller
  *
- * @author itheima
- * @date 2024-06-05
+ * @author kkk
+ * @date 2025-01-06
  */
+@Api(tags = "点位管理Controller")
 @RestController
 @RequestMapping("/manage/node")
 public class NodeController extends BaseController
@@ -32,18 +35,20 @@ public class NodeController extends BaseController
     /**
      * 查询点位管理列表
      */
+    @ApiOperation("查询点位管理列表")
     @PreAuthorize("@ss.hasPermi('manage:node:list')")
     @GetMapping("/list")
     public TableDataInfo list(Node node)
     {
         startPage();
-        List<NodeVo> voList = nodeService.selectNodeVoList(node);
-        return getDataTable(voList);
+        List<NodeVo> volist = nodeService.selectNodeVoList(node);
+        return getDataTable(volist);
     }
 
     /**
      * 导出点位管理列表
      */
+    @ApiOperation("导出点位管理列表")
     @PreAuthorize("@ss.hasPermi('manage:node:export')")
     @Log(title = "点位管理", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
@@ -57,6 +62,7 @@ public class NodeController extends BaseController
     /**
      * 获取点位管理详细信息
      */
+    @ApiOperation("获取点位管理详细信息")
     @PreAuthorize("@ss.hasPermi('manage:node:query')")
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id)
@@ -67,6 +73,7 @@ public class NodeController extends BaseController
     /**
      * 新增点位管理
      */
+    @ApiOperation("新增点位管理")
     @PreAuthorize("@ss.hasPermi('manage:node:add')")
     @Log(title = "点位管理", businessType = BusinessType.INSERT)
     @PostMapping
@@ -78,6 +85,7 @@ public class NodeController extends BaseController
     /**
      * 修改点位管理
      */
+    @ApiOperation("修改点位管理")
     @PreAuthorize("@ss.hasPermi('manage:node:edit')")
     @Log(title = "点位管理", businessType = BusinessType.UPDATE)
     @PutMapping
@@ -89,6 +97,7 @@ public class NodeController extends BaseController
     /**
      * 删除点位管理
      */
+    @ApiOperation("删除改点位管理")
     @PreAuthorize("@ss.hasPermi('manage:node:remove')")
     @Log(title = "点位管理", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{ids}")

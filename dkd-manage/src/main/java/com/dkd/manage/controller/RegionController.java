@@ -9,6 +9,8 @@ import com.dkd.common.utils.poi.ExcelUtil;
 import com.dkd.manage.domain.Region;
 import com.dkd.manage.domain.vo.RegionVo;
 import com.dkd.manage.service.IRegionService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -19,9 +21,10 @@ import java.util.List;
 /**
  * 区域管理Controller
  *
- * @author itheima
- * @date 2024-06-05
+ * @author kkk
+ * @date 2025-01-06
  */
+@Api(tags = "区域管理Controller")
 @RestController
 @RequestMapping("/manage/region")
 public class RegionController extends BaseController
@@ -32,6 +35,7 @@ public class RegionController extends BaseController
     /**
      * 查询区域管理列表
      */
+    @ApiOperation("查询区域管理列表")
     @PreAuthorize("@ss.hasPermi('manage:region:list')")
     @GetMapping("/list")
     public TableDataInfo list(Region region)
@@ -44,6 +48,7 @@ public class RegionController extends BaseController
     /**
      * 导出区域管理列表
      */
+    @ApiOperation("导出区域管理列表")
     @PreAuthorize("@ss.hasPermi('manage:region:export')")
     @Log(title = "区域管理", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
@@ -57,6 +62,7 @@ public class RegionController extends BaseController
     /**
      * 获取区域管理详细信息
      */
+    @ApiOperation("获取区域管理详细信息")
     @PreAuthorize("@ss.hasPermi('manage:region:query')")
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id)
@@ -67,6 +73,7 @@ public class RegionController extends BaseController
     /**
      * 新增区域管理
      */
+    @ApiOperation("新增区域管理")
     @PreAuthorize("@ss.hasPermi('manage:region:add')")
     @Log(title = "区域管理", businessType = BusinessType.INSERT)
     @PostMapping
@@ -78,6 +85,7 @@ public class RegionController extends BaseController
     /**
      * 修改区域管理
      */
+    @ApiOperation("修改区域管理")
     @PreAuthorize("@ss.hasPermi('manage:region:edit')")
     @Log(title = "区域管理", businessType = BusinessType.UPDATE)
     @PutMapping
@@ -89,6 +97,7 @@ public class RegionController extends BaseController
     /**
      * 删除区域管理
      */
+    @ApiOperation("删除改区域管理")
     @PreAuthorize("@ss.hasPermi('manage:region:remove')")
     @Log(title = "区域管理", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{ids}")

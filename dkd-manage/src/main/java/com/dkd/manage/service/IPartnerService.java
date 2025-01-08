@@ -8,8 +8,8 @@ import java.util.List;
 /**
  * 合作商管理Service接口
  *
- * @author itheima
- * @date 2024-06-05
+ * @author kkk
+ * @date 2025-01-06
  */
 public interface IPartnerService
 {
@@ -62,7 +62,7 @@ public interface IPartnerService
     public int deletePartnerById(Long id);
 
     /**
-     * 查询合作商列表
+     * 查询合作商的点位数量
      * @param partner
      * @return PartnerVo集合
      */

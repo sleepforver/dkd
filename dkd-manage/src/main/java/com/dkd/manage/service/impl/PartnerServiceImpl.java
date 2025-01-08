@@ -14,8 +14,8 @@ import java.util.List;
 /**
  * 合作商管理Service业务层处理
  *
- * @author itheima
- * @date 2024-06-05
+ * @author kkk
+ * @date 2025-01-06
  */
 @Service
 public class PartnerServiceImpl implements IPartnerService
@@ -56,7 +56,7 @@ public class PartnerServiceImpl implements IPartnerService
     @Override
     public int insertPartner(Partner partner)
     {
-        // 使用springSecurity工具类，对前端传入的密码进行加密
+        //使用SpringSecurity工具类，将前端传入的密码进行加密
         partner.setPassword(SecurityUtils.encryptPassword(partner.getPassword()));
         partner.setCreateTime(DateUtils.getNowDate());
         return partnerMapper.insertPartner(partner);
@@ -100,7 +100,7 @@ public class PartnerServiceImpl implements IPartnerService
     }
 
     /**
-     * 查询合作商列表
+     * 查询合作商的点位数量
      * @param partner
      * @return PartnerVo集合
      */

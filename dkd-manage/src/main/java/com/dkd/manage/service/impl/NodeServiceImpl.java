@@ -13,8 +13,8 @@ import java.util.List;
 /**
  * 点位管理Service业务层处理
  *
- * @author itheima
- * @date 2024-06-05
+ * @author kkk
+ * @date 2025-01-06
  */
 @Service
 public class NodeServiceImpl implements INodeService
@@ -95,6 +95,7 @@ public class NodeServiceImpl implements INodeService
     {
         return nodeMapper.deleteNodeById(id);
     }
+
     /**
      * 查询点位管理列表
      * @param node
