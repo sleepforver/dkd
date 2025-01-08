@@ -8,8 +8,8 @@ import java.util.List;
 /**
  * 区域管理Service接口
  *
- * @author itheima
- * @date 2024-06-05
+ * @author kkk
+ * @date 2025-01-06
  */
 public interface IRegionService
 {
@@ -61,11 +61,10 @@ public interface IRegionService
      */
     public int deleteRegionById(Long id);
 
-
     /**
      * 查询区域列表
      * @param region
-     * @return RegionVo集合
+     * @return
      */
     public List<RegionVo> selectRegionVoList(Region region);
 }

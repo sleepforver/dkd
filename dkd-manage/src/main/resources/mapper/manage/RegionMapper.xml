@@ -30,11 +30,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         where id = #{id}
     </select>
     <select id="selectRegionVoList" resultType="com.dkd.manage.domain.vo.RegionVo">
-        SELECT r.*, COUNT(n.id) AS node_count FROM tb_region r LEFT JOIN tb_node n ON r.id = n.region_id
+        select r.id, r.region_name, r.create_time, r.update_time, r.create_by, r.update_by, r.remark, count(n.id) as nodeCount
+        from tb_region r
+        left join tb_node n on r.id = n.region_id
         <where>
             <if test="regionName != null  and regionName != ''"> and r.region_name like concat('%', #{regionName}, '%')</if>
         </where>
-        GROUP BY r.id
+        group by r.id
     </select>
 
     <insert id="insertRegion" parameterType="Region" useGeneratedKeys="true" keyProperty="id">

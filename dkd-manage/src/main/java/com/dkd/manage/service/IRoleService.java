@@ -6,8 +6,8 @@ import com.dkd.manage.domain.Role;
 /**
  * 工单角色Service接口
  * 
- * @author itheima
- * @date 2024-06-15
+ * @author kkk
+ * @date 2025-01-08
  */
 public interface IRoleService 
 {

@@ -8,8 +8,8 @@ import java.util.List;
 /**
  * 点位管理Service接口
  *
- * @author itheima
- * @date 2024-06-05
+ * @author kkk
+ * @date 2025-01-06
  */
 public interface INodeService
 {

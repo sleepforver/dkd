@@ -2,15 +2,17 @@ package com.dkd.manage.mapper;
 
 import com.dkd.manage.domain.Partner;
 import com.dkd.manage.domain.vo.PartnerVo;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
  * 合作商管理Mapper接口
  *
- * @author itheima
- * @date 2024-06-05
+ * @author kkk
+ * @date 2025-01-06
  */
+@Mapper
 public interface PartnerMapper
 {
     /**
@@ -62,7 +64,7 @@ public interface PartnerMapper
     public int deletePartnerByIds(Long[] ids);
 
     /**
-     * 查询合作商列表
+     * 查询合作商的点位数量
      * @param partner
      * @return PartnerVo集合
      */
