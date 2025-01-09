@@ -99,7 +99,7 @@ public class CommonController
                     .upload();
             AjaxResult ajax = AjaxResult.success();
             ajax.put("url", fileInfo.getUrl());
-            ajax.put("fileName", fileInfo.getUrl()); // 注意：这里的值需要改为URL，因为前端的访问地址会做一个判断，如果一http开头就直接显示此图片
+            ajax.put("fileName", fileInfo.getUrl()); // 注意：这里的值需要改为URL，因为前端的访问地址会做一个判断，如果以http开头就直接显示此图片
             ajax.put("newFileName", fileInfo.getUrl());
             ajax.put("originalFilename", file.getOriginalFilename());
             return ajax;

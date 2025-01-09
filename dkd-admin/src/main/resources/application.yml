@@ -136,11 +136,11 @@ dromara:
     aliyun-oss:
       - platform: aliyun-oss-1 # 存储平台标识
         enable-storage: true  # 启用存储
-        access-key: LTAI5tCs6cDdYNsTGZRHzzx7
-        secret-key: OMlOrQn7vyblDVG9UNCaeNo1mBAWPq
-        end-point: oss-cn-beijing.aliyuncs.com
-        bucket-name: dkd-itheima
-        domain: https://dkd-itheima.oss-cn-beijing.aliyuncs.com/ # 访问域名，注意“/”结尾，例如：https://abc.oss-cn-shanghai.aliyuncs.com/
+        access-key: LTAI5t6brAwSkaPj2EzPqKWz
+        secret-key: joroFLDWrhngXl2ITDxEBEmt06Wz2C
+        end-point: oss-cn-shenzhen.aliyuncs.com
+        bucket-name: dkd-kkk
+        domain: https://dkd-kkk.oss-cn-shenzhen.aliyuncs.com/ # 访问域名，注意“/”结尾，例如：https://abc.oss-cn-shanghai.aliyuncs.com/
         base-path: dkd-images/ # 基础路径
 
 
